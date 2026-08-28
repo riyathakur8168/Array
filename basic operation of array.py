@@ -68,18 +68,6 @@
 #         count += 1
 # print(count,"times occur",target)
 
-arr = [1, 2, 2, 3, 4, 4, 5]
-result = []
-i = 0
-for j in range(1,len(arr)):
-    if arr[i]!= arr[j]:
-        result.append[arr[i]]
-        i+=1
-        j+=1
-    else:
-        result.append[arr[i]]
-        j+=1
-print(result)
-
+#
 
 
