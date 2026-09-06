@@ -2,18 +2,20 @@
 # brute approach wth time - o(n^2) & space - o(1)
 # arr = [2,7,11,15,5,4]
 # target = 9
+# arr = [1, 5, 7, -1, 5]
+# target = 6
 # for i in range(len(arr)):
 #     for j in range(i+1,len(arr)):
 #         if arr[i] + arr[j] == target:
 #             print(i,j)
 
 # hashmap = {}   #using hashmaptc- o(n) and spcae - o(n) 
-# for num in arr:
-#     required = target - num
+# for i in range(len(arr)):
+#     required = target - arr[i]
 #     if required in hashmap:
-#         print(hashmap[required],num)
+#         print(hashmap[required],i)
 #     else:
-#         hashmap[num] = index(edar index likha jayga ya to i)
+#         hashmap[arr[i]] = i#(edar index likha jayga ya to i)
 
 #@ approach with tc -o(n) & sc - o(1)
 # count = 0
@@ -67,16 +69,16 @@
 # print(res)
 
 #@ - longest consecutive subsequence 
-arr = [100, 4, 200, 1, 3, 2]
-count = 0
-nums = set(arr)
-longest = 0
-for num in nums:
-    if num-1 not in nums:
-        count = 1
-        current = num
-        while current + 1 in nums:
-            current += 1
-            count += 1
-        longest = max(longest,count)
-print(longest) 
+# arr = [100, 4, 200, 1, 3, 2]
+# count = 0
+# nums = set(arr)
+# longest = 0
+# for num in nums:
+#     if num-1 not in nums:
+#         count = 1
+#         current = num
+#         while current + 1 in nums:
+#             current += 1
+#             count += 1
+#         longest = max(longest,count)
+# print(longest) 
