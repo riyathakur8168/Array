@@ -15,7 +15,7 @@
 # print(arr1)
 
 #@ -- optimal : -tc-  o(n) and space - o(1) inplace algo 
-#-- esme hum j ka use karhe hai non zero elemnet ki position change karne k 
+#-- esme hum j ka use karhe hai non zero elemnet ki position change karne 
 #-- kliy and i dund rha ki array me kidr non zero element present hai jisr
 #-- usko nonzero milta fr j k sath exchange kardeta hai or j+= 1 kardeta hai 
 # j = 0
@@ -83,7 +83,7 @@
 # Output mein duplicates nahi hone chahiye.
 # Time complexity: O(n^3) and space - o(1)
 #-----
-arr = [-1, 0, 1, 2, -1, -4]
+# arr = [-1, 0, 1, 2, -1, -4]
 # result = set()
 # for i in range(len(arr)):
 #     for j in range(i+1,len(arr)):
@@ -93,7 +93,7 @@ arr = [-1, 0, 1, 2, -1, -4]
 #                 result.add(triplet)
 # print(result)
 
-#-- better :i fix karo
+#-- better :
 # i fix karo
 #    ↓
 # j ko move karo
@@ -103,16 +103,70 @@ arr = [-1, 0, 1, 2, -1, -4]
 # required seen mein hai?
 #    ↓
 # YES → 3 numbers mil gaye
-# NO  → current j ko seen mein daalo
+# NO  → current j ko seen mein daalo  
+#-- esme hum set ka use karenge takki duplicates pair na aaye 
+# seen  → current i ke andar third number find karne ke liye
+# result → final answers store karne ke liye + duplicates rokne ke liye
+# tc- o(n^2) & sc- o(n) 
+# result = set()
+# for i in range(len(arr)):
+#     seen = set()
+#     for j in range(i+1,len(arr)):
+#         required = -(arr[i] + arr[j])   #- arr[i]+arr[j]+required = 0 isliye required ko is form me likha hai 
+#         if required in seen:
+#             result.add(tuple(sorted([arr[i],arr[j],required])))
+#         else:
+#             seen.add(arr[j])
+# print(result)
 
-result = set()
-for i in range(len(arr)):
-    seen = set()
-    for j in range(i+1,len(arr)):
-        required = -(arr[i] + arr[j])
-        if required in seen:
-            result.add(tuple(sorted([arr[i],arr[j],required])))
-        else:
-            seen.add(arr[j])
-print(result)
+#-- optimal  
+# Array
+#   ↓
+# Sort
+#   ↓
+# i ko first element banao
+#   ↓
+# Duplicate i? → Yes → skip
+#   ↓ No
+# left = i+1
+# right = last
+#   ↓
+# 3 numbers ka total
+#   ↓
+#  ┌───────────────┬───────────────┬───────────────┐
+#  ↓               ↓               ↓
+# total < 0       total = 0       total > 0
+#  ↓               ↓               ↓
+# left++          answer save      right--
+#                  ↓
+#           duplicates skip
+#                  ↓
+#           left++, right--
+#                  ↓
+#              repeat
+# 3Sum mein i ke baad 2 elements compulsory hain, isliye i ko len(arr)-2 tak hi process karte hain.
+# tc- o(n^2) and space - o(1) or o(n)
+# arr.sort()
+# result = []
+# for i in range(len(arr)-2):
+#     if i > 0 and arr[i] == arr[i-1]:
+#         continue
+#     left = i+1
+#     right = len(arr) - 1
+#     while left < right:
+#         total = arr[i] + arr[left] + arr[right]
+#         if total == 0:
+#             result.append([arr[i],arr[left],arr[right]])
+#             while left < right and arr[left] == arr[left + 1]:
+#                 left += 1
+#             while left < right and arr[right] == arr[right - 1]:
+#                 right -= 1
+        
+#             left += 1
+#             right -= 1
+#         elif total < 0:
+#             left += 1
+#         else:
+#             right -= 1
+# print(result)
 
