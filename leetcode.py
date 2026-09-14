@@ -28,4 +28,5 @@ for j in range(1,len(nums)):
         # print(nums)
 print(nums[:i+1])
 
+
  
