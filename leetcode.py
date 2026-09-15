@@ -28,6 +28,7 @@
 #         # print(nums)
 # print(nums[:i+1])
 
+<<<<<<< HEAD
 # class Solution(object):
 #     def threeSum(self, nums):
 #         result = set()
@@ -44,4 +45,7 @@
 # obj = Solution()
 # print(obj.threeSum(nums))
         
+=======
+
+>>>>>>> c64f0260089dcd9d57411837518b448ff02bf04d
  
