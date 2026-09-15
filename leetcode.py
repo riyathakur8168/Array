@@ -19,13 +19,29 @@
 # print(nums)
 # for i in range(k):
 #     print(nums[i],end=" ")
-nums = [0,0,1,1,1,2,2,3,3,4]
-i = 0
-for j in range(1,len(nums)):
-    if nums[i] != nums[j]:
-        i += 1
-        nums[i] = nums[j]
-        # print(nums)
-print(nums[:i+1])
+# nums = [0,0,1,1,1,2,2,3,3,4]
+# i = 0
+# for j in range(1,len(nums)):
+#     if nums[i] != nums[j]:
+#         i += 1
+#         nums[i] = nums[j]
+#         # print(nums)
+# print(nums[:i+1])
 
+# class Solution(object):
+#     def threeSum(self, nums):
+#         result = set()
+#         for i in range(len(nums)):
+#             seen = set()
+#             for j in range(i+1,len(nums)):
+#                 required = -(nums[i] + nums[j])
+#                 if required in seen:
+#                     result.add(tuple(sorted([nums[i],nums[j],required])))
+#                 else:
+#                     seen.add(nums[j])
+#         return(list(result))
+# nums  = [-1,0,1,2,-1,-4]
+# obj = Solution()
+# print(obj.threeSum(nums))
+        
  
