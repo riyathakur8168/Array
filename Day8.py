@@ -17,20 +17,20 @@
 # print(mx)
 
 #-- find the lenth of the longest substring that contains no repeating charcters
-s = "abcabcbb"
-k = 2
-i = 0
-j = 0
-seen = set()
-mx  = 0
-while j < len(s):
-    while s[j]  in seen:
-        seen.remove(s[j])
-        i += 1
-    seen.add(s[j])
-    mx = max(mx,j-i+1)
-    j += 1
-print(mx)
+# s = "abcabcbb"
+# k = 2
+# i = 0
+# j = 0
+# seen = set()
+# mx  = 0
+# while j < len(s):
+#     while s[j]  in seen:
+#         seen.remove(s[j])
+#         i += 1
+#     seen.add(s[j])
+#     mx = max(mx,j-i+1)
+#     j += 1
+# print(mx)
 
 
 
